@@ -16,11 +16,11 @@ spring:
   application:
     name: sawako-service-user
   datasource:
+    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sawako?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
     username: root
     password: root
-    # TODO: type没有hikari连接池
   boot:
     admin:
       client:
