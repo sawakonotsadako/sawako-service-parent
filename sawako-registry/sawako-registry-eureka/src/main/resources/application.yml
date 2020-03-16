@@ -15,4 +15,4 @@ spring:
         url: http://localhost:8769
 
   application:
-    name: eureka
+    name: sawako-registry-eureka
