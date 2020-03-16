@@ -30,6 +30,7 @@
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-boot-admin.version>2.2.1</spring-boot-admin.version>
         <mybatis-spring-boot.version>2.1.2</mybatis-spring-boot.version>
+        <hikari.version>3.4.2</hikari.version>
         <mysql-connector.version>5.1.38</mysql-connector.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -103,6 +104,9 @@
         </dependency>
     </dependencies>-->
 
+    <dependencies>
+
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -158,7 +162,7 @@
                 <artifactId>spring-boot-starter-freemarker</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-mail</artifactId>
                 <version>${spring-boot.version}</version>
@@ -172,17 +176,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
                 <version>${spring-boot.version}</version>
-            </dependency>
+            </dependency>-->
             <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-quartz</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>-->
-            <dependency>
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-security</artifactId>
                 <version>${spring-boot.version}</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -201,27 +205,21 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari.version}</version>
+            </dependency>
             <!--MySQL Connector-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector.version}</version>
-                <scope>runtime</scope>
-            </dependency>
-            <!--Kafka-->
-            <dependency>
-                <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka-streams</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.kafka</groupId>
-                <artifactId>spring-kafka</artifactId>
             </dependency>
             <!--MyBatis-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-spring-boot.version}</version>
             </dependency>
             <!--Lombok-->
             <dependency>
@@ -229,6 +227,17 @@
                 <artifactId>lombok</artifactId>
                 <optional>true</optional>
             </dependency>
+            <!--Kafka-->
+            <!--<dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-streams</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+            </dependency>-->
+
+
             <!--Dev Tools-->
             <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
