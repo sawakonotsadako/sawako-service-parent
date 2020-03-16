@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      #      defaultZone: http://user:password@localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+spring:
+  application:
+    name: sawako-router-gateway
+  boot:
+    admin:
+      client:
+        url: http://localhost:8769
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:
+        - id: user
+          uri: http://localhost:8801
+          predicates:
+            - Path=/user
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
