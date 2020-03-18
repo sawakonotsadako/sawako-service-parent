@@ -14,6 +14,8 @@
 
     <modules>
         <module>sawako-server-admin</module>
+        <module>sawako-server-config</module>
+        <module>sawako-server-bus</module>
     </modules>
 
 </project>
