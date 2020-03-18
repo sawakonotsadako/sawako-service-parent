@@ -1,3 +1,4 @@
+
 server:
   port: 9000
 
@@ -10,13 +11,16 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
 
+# Spring Boot/Cloud配置
 spring:
   application:
     name: sawako-router-gateway
+  # Spring Boot Admin控制台
   boot:
     admin:
       client:
         url: http://localhost:8769
+  # 网关路由
   cloud:
     gateway:
       discovery:
@@ -28,6 +32,8 @@ spring:
           uri: http://localhost:8801
           predicates:
             - Path=/user
+
+# 暴露端点配置
 management:
   endpoints:
     web:
