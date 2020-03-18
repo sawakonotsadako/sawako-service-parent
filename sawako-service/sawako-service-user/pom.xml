@@ -11,6 +11,7 @@
     <packaging>jar</packaging>
 
     <artifactId>sawako-service-user</artifactId>
+    <name>sawako-service-user</name>
 
     <dependencies>
         <!--Spring Boot-->
@@ -34,6 +35,7 @@
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
+            <version>${hikari.version}</version>
         </dependency>
         <!--MySQL Connector-->
         <dependency>
@@ -53,6 +55,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.name}</finalName>
+                </configuration>
             </plugin>
         </plugins>
     </build>

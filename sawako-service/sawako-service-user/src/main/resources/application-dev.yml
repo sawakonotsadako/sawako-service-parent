@@ -1,6 +1,7 @@
 # 服务端口配置
 server:
   port: 8801
+
 # 注册中心配置
 eureka:
   client:
@@ -11,17 +12,23 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
 
-# Spring Boot相关配置
+# Spring Boot/Cloud配置
 spring:
   application:
     name: sawako-service-user
+  # 数据库连接信息
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sawako?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
     username: root
     password: root
+  # Spring Boot Admin控制台
   boot:
     admin:
       client:
         url: http://localhost:8769
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
