@@ -26,4 +26,5 @@
         <module>sawako-service-attachment</module>
         <module>sawako-service-message</module>
     </modules>
+
 </project>

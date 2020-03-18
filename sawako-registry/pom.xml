@@ -19,4 +19,5 @@
     <modules>
         <module>sawako-registry-eureka</module>
     </modules>
+
 </project>
