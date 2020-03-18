@@ -32,3 +32,5 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+    config:
+      uri: http://localhost:8888

@@ -12,10 +12,12 @@
     <artifactId>sawako-server-admin</artifactId>
 
     <dependencies>
+        <!--Spring Boot Admin Server-->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
         </dependency>
+        <!--Spring Boot Actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -30,6 +32,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

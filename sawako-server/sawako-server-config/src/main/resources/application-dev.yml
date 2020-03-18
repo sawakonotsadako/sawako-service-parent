@@ -1,0 +1,48 @@
+# 服务端口配置
+server:
+  port: 8888
+
+# 注册中心配置
+eureka:
+  client:
+    service-url:
+      #      defaultZone: http://user:password@localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+# Spring Boot/Cloud配置
+spring:
+  application:
+    name: config-server
+  # Spring Boot Admin控制台
+  boot:
+    admin:
+      client:
+        url: http://localhost:8769
+  cloud:
+    config:
+      label: master
+      server:
+        # GitHub配置中心
+        git:
+          uri: https://github.com/sawakonotsadako/spring-cloud-config-center
+          username: sawakonotsadako
+          password: BORNfreeonekiss2
+          search-paths: order, product
+          #clone-on-start: true
+          #basedir:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+# 暴露端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
