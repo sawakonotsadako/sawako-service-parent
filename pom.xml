@@ -265,6 +265,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--MySQL Connector-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
